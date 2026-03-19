@@ -1,155 +1,296 @@
-/* Global Reset */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* --- Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    background: #fff; 
-    color: #333; 
-    line-height: 1.6; 
-    overflow-x: hidden; /* Mencegah scroll horizontal di HP */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
-/* Container Responsif */
-.container { 
-    width: 100%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Warna Background Gelap Modern */
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar { 
-    width: 100%; 
-    background: #1a1a1a; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    border-bottom: 3px solid #ffcc00; 
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: rgba(18, 18, 18, 0.95);
+    border-bottom: 2px solid #ffcc00; /* Aksen Kuning Emas */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-.navbar-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+.navbar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo { 
-    height: 50px; 
-    width: auto; 
+/* Logo Home Button (Kiri Pojok) */
+.logo-home {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-home:hover {
+    transform: scale(1.05);
+}
+
+.logo-home img {
+    height: 50px; /* Sesuaikan tinggi logo */
+    width: auto;
+    display: block;
 }
 
 /* Nav Links */
-.nav-links { 
-    display: flex; 
-    list-style: none; 
-    gap: 15px; 
-    flex-wrap: wrap; /* Menu akan turun ke bawah jika tidak muat */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Agar menu turun di HP jika penuh */
 }
 
 .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    background-color: #ffcc00;
+    color: #121212;
+}
+
+/* --- Sub-Menu (Untuk Struktur Organisasi) --- */
+.sub-nav {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.sub-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sub-links li a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.sub-links li a:hover, .sub-links li a.active {
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+/* --- Hero Section (Halaman Depan) --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,1)), 
+                url('hero-bg.jpg') no-repeat center center/cover; /* Ganti hero-bg.jpg jika ada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+    color: #ffcc00;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffcc00;
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+/* --- Main Content Areas --- */
+.main-content {
+    padding: 60px 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin: 10px auto 0;
+}
+
+/* Profile Card (Struktur) & Booklet (Kerjasama) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.profile-card, .booklet-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+}
+
+.profile-card:hover, .booklet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: #ffcc00;
+}
+
+.profile-img-container, .booklet-img-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.profile-img-container img, .booklet-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-info, .booklet-info {
+    padding: 25px;
+}
+
+.profile-info h3, .booklet-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.profile-info .position, .booklet-info .type {
+    color: #ffcc00;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.profile-info .bio, .booklet-info .desc {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Contact Button (WA) */
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25d366; /* Warna WA */
     color: #fff;
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links li a:hover, .nav-links li a.active { 
-    color: #ffcc00; 
-}
-
-/* Sub-menu (Untuk halaman pengurus) */
-.sub-menu {
-    background: #222;
     padding: 10px;
-    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-/* Hero Section */
-.hero {
-    height: 60vh;
-    background: #1a1a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+/* Placeholder (Map/Spotify) */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
 }
 
-.hero h1 { font-size: 3rem; text-transform: uppercase; }
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
-/* Page Header */
-.page-header {
-    background: #f4f4f4;
+/* --- Footer --- */
+footer {
+    background-color: #0a0a0a;
     padding: 40px 0;
     text-align: center;
+    border-top: 1px solid #333;
 }
 
-/* Profile Card (Struktur Organisasi) */
-.profile-card, .booklet-card {
-    display: flex;
-    background: #fff;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+footer p {
+    color: #777;
+    font-size: 0.85rem;
 }
 
-.profile-image img, .booklet-image img {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-}
-
-.profile-info, .booklet-info { 
-    padding: 25px; 
-    flex: 1; 
-}
-
-.profile-info h3 { margin-bottom: 10px; color: #1a1a1a; }
-.position { font-weight: bold; color: #ffcc00; margin-bottom: 10px; }
-
-/* WhatsApp Contact Section */
-.wa-contact {
-    background: #25d366;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-top: 30px;
-}
-
-.wa-contact a { color: white; font-weight: bold; text-decoration: none; }
-
-/* Placeholder Box (Maps/Spotify) */
-.placeholder-box {
-    width: 100%;
-    min-height: 300px;
-    background: #eee;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Footer */
-footer {
-    background: #1a1a1a;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    margin-top: 50px;
-}
-
-/* --- MEDIA QUERIES (UNTUK HANDPHONE) --- */
+/* --- Media Queries (Responsif HP) --- */
 @media (max-width: 768px) {
+    html { font-size: 14px; }
+    
     .navbar-flex {
         flex-direction: column;
         gap: 15px;
@@ -157,21 +298,21 @@ footer {
 
     .nav-links {
         justify-content: center;
-        gap: 10px;
-    }
-
-    .hero h1 { font-size: 1.8rem; }
-
-    .profile-card, .booklet-card {
-        flex-direction: column; /* Gambar di atas, teks di bawah */
-    }
-
-    .profile-image img, .booklet-image img {
         width: 100%;
-        height: auto;
     }
 
-    .content-section h2 {
-        font-size: 1.5rem;
+    .nav-links li a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .sub-links li a { font-size: 0.75rem; }
+
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    .page-title { font-size: 2rem; }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* 1 Kolom di HP */
     }
 }
