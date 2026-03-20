@@ -164,21 +164,35 @@ body {
     padding: 60px 0;
 }
 
+/* Menghilangkan garis bawah bawaan dan memindahkannya ke atas */
 .page-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
     color: #fff;
+    display: flex;
+    flex-direction: column; /* Menyusun elemen secara vertikal */
+    align-items: center;    /* Menjaga semuanya tetap di tengah */
 }
 
-.page-title::after {
+/* Garis Kuning di ATAS Teks */
+.page-title::before {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
     background-color: #ffcc00;
-    margin: 10px auto 0;
+    margin-bottom: 15px; /* Jarak antara garis dan tulisan Welcome */
 }
+
+/* Memastikan tidak ada garis di bawah teks (menghapus settingan lama) */
+.page-title::after {
+    display: none;
+}
+
+
+
+
 
 /* Profile Card (Struktur) & Booklet (Kerjasama) */
 .card-grid {
@@ -414,7 +428,7 @@ footer p a:hover {
 .staff-info p {
     font-size: 0.8rem;
     color: #ffcc00;
-    font-weight: 500;
+    font-weight:600;
     text-transform: uppercase;
 }
 
@@ -430,4 +444,139 @@ footer p a:hover {
     }
     .staff-img-box { height: 160px; } /* Di HP foto lebih pendek */
     .staff-info h4 { font-size: 0.9rem; }
+}
+
+/* Container untuk membungkus kartu-kartu agar di tengah */
+.booklet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Membuat semua kartu ke tengah */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Style Kartu Memanjang (Horizontal) */
+.booklet-card-horizontal {
+    display: flex; /* Membuat foto dan konten bersampingan */
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    max-width: 800px; /* Batas lebar agar tetap elegan di tengah */
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.booklet-card-horizontal:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc00;
+}
+
+/* Bagian Foto (Sebelah Kiri) */
+.booklet-img-box {
+    flex: 0 0 300px; /* Lebar foto tetap 300px */
+    height: auto;
+    overflow: hidden;
+}
+
+.booklet-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bagian Info/Konten (Sebelah Kanan) */
+.booklet-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.booklet-content .type {
+    color: #ffcc00;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.booklet-content h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.booklet-content .desc {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Responsif untuk HP (Menjadi Tumpuk ke Bawah) */
+@media (max-width: 768px) {
+    .booklet-card-horizontal {
+        flex-direction: column; /* Foto di atas, teks di bawah saat di HP */
+        max-width: 90%;
+    }
+
+    .booklet-img-box {
+        flex: 0 0 200px; /* Foto lebih pendek di HP */
+    }
+
+    .booklet-content h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Container WA - Sekarang tidak melayang */
+.wa-floating-container {
+    display: flex;
+    justify-content: center; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 50px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
+/* Gaya Tombol WA (Tetap sama, hanya hapus bayangan jika ingin lebih simpel) */
+.wa-floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #25d366;
+}
+
+.wa-floating-btn:hover {
+    background-color: transparent; /* Background jadi bening saat hover */
+    color: #25d366;               /* Teks jadi hijau */
+    transform: translateY(-3px);
+}
+
+.wa-icon-svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Warna dasar link sebelum disentuh kursor */
+.contact-link {
+    color: #b0b0b0;          /* Warna abu-abu agar senada dengan deskripsi */
+    text-decoration: none;   /* Menghilangkan garis bawah standar */
+    transition: all 0.3s ease; /* Agar perubahan warna terasa halus */
+    font-weight: 500;
+}
+
+/* Efek saat kursor mengenai tulisan (Hover) */
+.contact-link:hover {
+    color: #ffcc00;          /* Berubah menjadi kuning khas UAB */
+    text-decoration: underline; /* Muncul garis bawah */
+    padding-left: 5px;       /* Efek tambahan: sedikit bergeser ke kanan */
 }
