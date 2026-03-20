@@ -316,3 +316,96 @@ footer p {
         grid-template-columns: 1fr; /* 1 Kolom di HP */
     }
 }
+
+/* Gaya dasar link di footer */
+footer p a {
+    color: #ffffff;          /* Warna awal: Putih */
+    text-decoration: none;   /* Menghilangkan garis bawah */
+    font-weight: 600;        /* Membuat tulisan sedikit tebal */
+    transition: color 0.3s ease; /* Efek transisi halus saat berubah warna */
+}
+
+/* Gaya saat kursor menyentuh (Hover) */
+footer p a:hover {
+    color: #ffcc00;          /* Warna saat disentuh: Kuning Emas UAB */
+    text-decoration: underline; /* Muncul garis bawah saat disentuh (opsional) */
+}
+
+/* Container Utama Staff */
+.staff-grid {
+    display: grid;
+    /* Laptop: 3 kolom, Tablet: 2 kolom, HP: 2 kolom kecil */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Kartu Staff yang Lebih Minimalis */
+.staff-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.staff-card:hover {
+    border-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+/* Ukuran Foto Staff Lebih Seragam */
+.staff-img-box {
+    width: 100%;
+    height: 220px; /* Ukuran pas untuk foto staff */
+    overflow: hidden;
+    background: #222;
+}
+
+.staff-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto tidak akan gepeng */
+    filter: grayscale(30%); /* Efek estetik, akan berwarna penuh saat hover */
+    transition: 0.3s;
+}
+
+.staff-card:hover .staff-img-box img {
+    filter: grayscale(0%);
+}
+
+/* Info Text Staff */
+.staff-info {
+    padding: 15px;
+}
+
+.staff-info h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Nama panjang akan terpotong rapi */
+}
+
+.staff-info p {
+    font-size: 0.8rem;
+    color: #ffcc00;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVE FIX --- */
+@media (max-width: 992px) {
+    .staff-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .staff-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom agar tidak terlalu panjang ke bawah */
+        gap: 15px; 
+    }
+    .staff-img-box { height: 160px; } /* Di HP foto lebih pendek */
+    .staff-info h4 { font-size: 0.9rem; }
+}
