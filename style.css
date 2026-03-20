@@ -289,6 +289,23 @@ footer p {
 
 /* --- Media Queries (Responsif HP) --- */
 @media (max-width: 768px) {
+    .staff-grid {
+        gap: 15px; /* Jarak lebih rapat di HP */
+    }
+
+    .staff-card {
+        /* Di HP (2 kolom), lebar kartu 50% dikurangi gap */
+        width: calc(50% - 15px); 
+        min-width: 140px; /* Minimal lebar di HP agar tidak hancur */
+    }
+    
+    .staff-img-box { 
+        height: 160px; 
+    }
+    
+    .staff-info h4 { 
+        font-size: 0.9rem; 
+    }
     html { font-size: 14px; }
     
     .navbar-flex {
@@ -333,20 +350,16 @@ footer p a:hover {
 
 /* Container Utama Staff */
 .staff-grid {
-    display: grid;
-    /* Laptop: 3 kolom, Tablet: 2 kolom, HP: 2 kolom kecil */
-    grid-template-columns: repeat(3, 1fr); 
+    display: flex;           /* Ubah ke Flex agar lebih fleksibel untuk item ganjil */
+    flex-wrap: wrap;         /* Agar item turun ke bawah jika ruang habis */
+    justify-content: center; /* KUNCI UTAMA: Membuat semua isi (termasuk yang ganjil) berada di tengah */
     gap: 25px;
-    margin-top: 20px;
-
-    /* --- TAMBAHAN BARU AGAR TIDAK MEPET --- */
-    max-width: 1000px;  /* Batasi lebar maksimal grid */
-    margin-left: auto;  /* Geser otomatis dari kiri */
-    margin-right: auto; /* Geser otomatis dari kanan (kombinasi ini bikin ke tengah) */
-    padding: 0 20px;    /* Ruang aman cadangan agar tidak menyentuh layar di HP */
+    margin: 20px auto 0;
+    max-width: 1000px;
+    padding: 0 20px;
 }
 
-/* Kartu Staff yang Lebih Minimalis */
+/* Ukuran Kartu Staff di Laptop */
 .staff-card {
     background: #1a1a1a;
     border-radius: 12px;
@@ -354,6 +367,9 @@ footer p a:hover {
     border: 1px solid #333;
     transition: all 0.3s ease;
     text-align: center;
+    /* Di laptop (3 kolom), lebar kartu kira-kira 30% */
+    width: calc(33.333% - 25px); 
+    min-width: 250px; /* Batas minimal agar kartu tidak terlalu kurus */
 }
 
 .staff-card:hover {
