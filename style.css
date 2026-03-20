@@ -338,6 +338,12 @@ footer p a:hover {
     grid-template-columns: repeat(3, 1fr); 
     gap: 25px;
     margin-top: 20px;
+
+    /* --- TAMBAHAN BARU AGAR TIDAK MEPET --- */
+    max-width: 1000px;  /* Batasi lebar maksimal grid */
+    margin-left: auto;  /* Geser otomatis dari kiri */
+    margin-right: auto; /* Geser otomatis dari kanan (kombinasi ini bikin ke tengah) */
+    padding: 0 20px;    /* Ruang aman cadangan agar tidak menyentuh layar di HP */
 }
 
 /* Kartu Staff yang Lebih Minimalis */
