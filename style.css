@@ -737,3 +737,222 @@ footer p a:hover {
         height: 300px;  /* Peta tidak terlalu tinggi di layar HP */
     }
 }
+
+/* Container Utama Item */
+.playlist-item {
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.playlist-flex {
+    display: flex;
+    align-items: center;
+    gap: 120px; /* JARAK AMAN: Agar deskripsi tidak tertutup vinyl yang keluar */
+    flex-wrap: wrap;
+}
+
+/* --- LOGIKA VISUAL ALBUM --- */
+.album-wrapper {
+    position: relative;
+    width: 320px; /* Area total cover + vinyl yang keluar */
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+
+/* Cover Album (Depan) */
+.album-cover {
+    position: relative;
+    z-index: 3;
+    left: 50px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 8px 0 25px rgba(0,0,0,0.6);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/*Judul Lagu*/
+.song-info-top {
+    position: relative;
+    left: 50px;
+    color: white !important;
+}
+/* Piringan Vinyl (Belakang) */
+.vinyl-record {
+    position: absolute;
+    z-index: 1;
+    left: 180px; /* GESER KE KANAN: Posisi vinyl keluar lebih banyak */
+    width: 240px;
+    height: 240px;
+    background-color: #080808; /* Hitam pekat piringan */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Tekstur alur piringan hitam */
+    background: radial-gradient(circle, #111 20%, #050505 21%, #111 25%, #050505 26%);
+    background-size: 5px 5px;
+    
+    animation: spin 5s linear infinite;
+}
+
+/* Efek Fade Color / Cahaya Pantulan (Shine) */
+.vinyl-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradien kerucut untuk menciptakan pantulan cahaya seperti jam tangan/CD */
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255,255,255,0.05) 45deg,
+        transparent 90deg,
+        rgba(255,255,255,0.05) 180deg,
+        transparent 270deg,
+        rgba(255,255,255,0.05) 315deg,
+        transparent 360deg
+    );
+    z-index: 2;
+}
+
+/* Label Tengah (Gambar Cover) */
+.vinyl-label {
+    position: relative;
+    z-index: 4;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #111;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.vinyl-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animasi Putar */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Deskripsi Lagu */
+.song-description {
+    position: relative;
+    left: 10px;
+    flex: 2;
+    max-width: 500px;
+    color: #d0d0d0;
+    z-index: 5; /* Pastikan teks di atas segalanya */
+}
+
+/* Responsif untuk HP */
+@media (max-width: 992px) {
+    .playlist-flex {
+        gap: 40px;
+        justify-content: center;
+    }
+    .album-wrapper {
+        margin-right: 60px; /* Ruang tambahan karena vinyl menggeser ke kanan */
+    }
+}
+
+/* Styling Pemutar Audio */
+.audio-preview {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: inline-block;
+    width: 100%;
+}
+
+.preview-label {
+    font-size: 0.85rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+audio {
+    width: 100%;
+    height: 35px;
+    filter: invert(90%) hue-rotate(180deg) brightness(1.2); /* Membuat audio player menyesuaikan tema dark mode */
+}
+
+/* Styling Tombol Spotify (Mengikuti Gaya WA Anda) */
+.spotify-btn-container {
+    display: flex;
+    justify-content: flex-start; /* Ganti ke center jika di tampilan HP */
+    margin-top: 15px;
+}
+
+.spotify-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #1DB954; /* Hijau Spotify */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid #1DB954;
+}
+
+.spotify-btn:hover {
+    background-color: transparent;
+    color: #1DB954;
+    transform: translateY(-3px);
+}
+
+.spotify-icon-svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Penyesuaian Responsif HP */
+@media (max-width: 768px) {
+    .spotify-btn-container {
+        justify-content: center;
+    }
+}
+
+/* Menargetkan Judul Lagu */
+.song-title {
+    color: #ffffff; /* Putih bersih */
+}
+
+/* Menargetkan Nama Band (Paragraf) */
+.song-artist {
+    color: #ffffff;
+}
+
+/* KHUSUS: Menargetkan Link di dalam Nama Band */
+/* Ini penting karena link <a> tidak akan berubah warna hanya dengan mengatur parent-nya */
+.song-artist a {
+    color: #ffffff; 
+    text-decoration: none; /* Menghilangkan garis bawah jika ingin lebih bersih */
+    transition: color 0.3s ease;
+}
+
+/* Opsional: Berikan efek warna kuning khas UAB saat link disentuh kursor */
+.song-artist a:hover {
+    color: #ffcc00; 
+}
