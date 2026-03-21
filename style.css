@@ -956,3 +956,71 @@ audio {
 .song-artist a:hover {
     color: #ffcc00; 
 }
+
+/* --- Perbaikan Playlist General --- */
+.playlist-container {
+    padding-bottom: 50px;
+}
+
+/* Memastikan judul dan konten dalam satu grup yang rapi */
+.song-info-top {
+    position: relative;
+    left: 0; /* Reset left agar bisa diatur lewat margin */
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 50px; /* Sejajar dengan cover di laptop */
+}
+
+/* --- RESPONSIVE FIX UNTUK HP (PENTING) --- */
+@media (max-width: 768px) {
+    .playlist-flex {
+        flex-direction: column; /* Teks pindah ke bawah cover */
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .song-info-top {
+        padding-left: 0;
+        text-align: center; /* Judul ke tengah di HP */
+    }
+
+    .album-wrapper {
+        width: 250px; /* Kecilkan sedikit untuk HP */
+        height: 250px;
+        margin: 0 auto;
+        transform: translateX(-30px); /* Geser ke kiri sedikit agar vinyl yang nongol di kanan tetap di tengah layar */
+    }
+
+    .album-cover {
+        left: 0; /* Reset posisi cover */
+        width: 200px;
+        height: 200px;
+    }
+
+    .vinyl-record {
+        left: 100px; /* Vinyl nongol lebih sedikit agar tidak bikin layar bocor */
+        width: 190px;
+        height: 190px;
+    }
+
+    .vinyl-label {
+        width: 60px;
+        height: 60px;
+    }
+
+    .song-description {
+        left: 0; /* Reset posisi teks */
+        padding: 0 10px;
+        max-width: 100%;
+    }
+
+    .spotify-btn-container {
+        justify-content: center; /* Tombol ke tengah di HP */
+    }
+    
+    /* Mencegah scroll horizontal yang merusak tampilan */
+    body {
+        overflow-x: hidden;
+    }
+}
