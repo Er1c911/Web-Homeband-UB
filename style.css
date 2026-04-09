@@ -549,6 +549,14 @@ footer p a:hover {
     width: 100%;
 }
 
+.wa-info {
+    display: flex;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
 /* Gaya Tombol WA (Tetap sama, hanya hapus bayangan jika ingin lebih simpel) */
 .wa-floating-btn {
     display: flex;
