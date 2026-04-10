@@ -1093,6 +1093,35 @@ audio {
     font-size: 1.1rem;
 }
 
+.info-tombol {
+    display: flex;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
+.infoTOmbol-floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffcc00;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ffb700;
+}
+
+.infoTOmbol-floating-btn:hover {
+    background-color: transparent; /* Background jadi bening saat hover */
+    color: #ffb700;               /* Teks jadi hijau */
+    transform: translateY(-3px);
+}
+
 /* --- RESPONSIVE UNTUK HP (Mobile) --- */
 @media (max-width: 768px) {
     .info-wrapper {
