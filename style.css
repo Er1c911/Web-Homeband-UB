@@ -1235,3 +1235,98 @@ audio {
         flex: 0 0 90%; /* Pada HP, gambar sedikit terlihat di samping agar user tahu bisa digeser */
     }
 }
+
+
+/* --- PENYESUAIAN UNTUK TABLET & IPAD (768px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 95%; /* Memberi ruang lebih di sisi layar */
+    }
+
+    /* Penyesuaian Staff Grid agar tetap 2-3 kolom rapi */
+    .staff-card {
+        width: calc(50% - 25px); /* 2 kolom di tablet agar foto tetap besar */
+        min-width: 280px;
+    }
+
+    /* Penyesuaian Playlist Vinyl */
+    .playlist-flex {
+        gap: 60px; /* Mengurangi gap agar tidak tumpah */
+        justify-content: center;
+    }
+
+    .album-wrapper {
+        transform: scale(0.9); /* Sedikit mengecilkan visual album di tablet */
+    }
+
+    .song-description {
+        max-width: 450px;
+    }
+
+    /* Penyesuaian Informasi (info-card) */
+    .info-wrapper {
+        gap: 20px;
+    }
+
+    .info-image-container {
+        flex: 0 0 250px; /* Sedikit mengecilkan lebar gambar */
+    }
+
+    /* Navigasi */
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}
+
+/* --- PERBAIKAN GLOBAL UNTUK SEMUA LAYAR (Agar Sempurna) --- */
+
+/* Memastikan Flexbox Grid Staff tetap rapi jika jumlah ganjil */
+.staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 25px;
+}
+
+/* Memperbaiki overflow pada Vinyl Record di layar tanggung */
+.playlist-item {
+    overflow: hidden; /* Mencegah piringan vinyl membuat scroll horizontal */
+    padding: 20px 0;
+}
+
+/* Memperbaiki booklet agar gambar tetap proporsional di tablet */
+@media (max-width: 1024px) {
+    .booklet-card-horizontal {
+        max-width: 100%;
+    }
+    
+    .booklet-img-box {
+        flex: 0 0 250px; /* Ukuran gambar di tablet */
+    }
+}
+
+/* Optimalisasi Navigasi saat Menu Terlalu Banyak */
+@media (max-width: 1100px) {
+    .navbar-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-home {
+        margin-bottom: 15px;
+    }
+    
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+/* Scrollbar halus untuk slider gambar di iPad */
+.image-slider {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
+}
