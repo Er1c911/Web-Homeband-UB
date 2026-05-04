@@ -1197,51 +1197,6 @@ audio {
     }
 }
 
-/* Pengaturan Utama Card */
-.booklet-card-horizontal {
-    display: flex;
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    align-items: stretch;
-}
-
-/* Kotak Foto: Melebar sesuai foto aslinya (Auto), tapi dibatasi agar teks tidak hilang */
-.booklet-img-box {
-    flex: 0 1 auto; /* Lebar otomatis mengikuti isi (foto) */
-    max-width: 60%; /* Batas aman maksimal foto agar teks tidak terlalu sempit */
-    display: flex;
-}
-
-.booklet-img-box img {
-    width: auto;
-    max-width: 100%;
-    height: 400px; /* Tinggi seragam agar rapi */
-    object-fit: cover; /* Foto mepet frame tanpa distorsi */
-    display: block;
-}
-
-/* Konten Deskripsi: Mengambil sisa lebar yang tersedia */
-.booklet-content {
-    flex: 1;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Styling Kontak agar sejajar dengan Ikon */
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.fa-instagram { color: #E1306C; }
-.fa-whatsapp { color: #25D366; }
-
 /* Responsive Mobile */
 @media (max-width: 768px) {
     .booklet-card-horizontal {
@@ -1320,8 +1275,39 @@ audio {
     border: 2px solid #ffcc00;
 }
 
-.infoTOmbol-floating-btn:hover {
-    background-color: transparent; /* Background jadi bening saat hover */
-    color: #ffcc00;               /* Teks jadi hijau */
-    transform: translateY(-3px);
+/* Responsif HP */
+@media (max-width: 768px) {
+    .booklet-wrapper {
+        flex-direction: column; /* Gambar & Teks jadi berderet ke bawah */
+        gap: 20px;
+    }
+
+    .booklet-image-container {
+        flex: 0 0 auto;
+        width: 100%; /* Gambar memenuhi lebar layar HP */
+        max-width: 100%; 
+    }
+
+    .booklet-title {
+        font-size: 1.5rem;
+        text-align: center; /* Judul ke tengah saat di HP agar lebih balance */
+        border-left: none;
+        border-bottom: 3px solid #ffcc00;
+        padding-left: 0;
+        padding-bottom: 5px;
+        display: block;
+    }
+
+    .booklet-text {
+        text-align: justify; /* Teks rata kanan-kiri di HP agar rapi */
+        font-size: 1rem;
+    }
+    
+    /* Navbar juga perlu dibuat scrollable jika terlalu panjang */
+    .nav-links {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
 }
