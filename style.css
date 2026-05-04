@@ -1,6 +1,4 @@
-/* ============================================================
-   1. GLOBAL STYLES
-   ============================================================ */
+/* --- Global Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -16,7 +14,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212;
+    background-color: #121212; /* Warna Background Gelap Modern */
     color: #e0e0e0;
     line-height: 1.6;
     overflow-x: hidden;
@@ -29,17 +27,15 @@ body {
     padding: 0 20px;
 }
 
-/* ============================================================
-   2. HEADER & NAVIGATION
-   ============================================================ */
+/* --- Header & Navigation --- */
 .header {
     background-color: rgba(18, 18, 18, 0.95);
-    border-bottom: 2px solid #ffcc00;
+    border-bottom: 2px solid #ffcc00; /* Aksen Kuning Emas */
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .navbar-flex {
@@ -48,6 +44,7 @@ body {
     align-items: center;
 }
 
+/* Logo Home Button (Kiri Pojok) */
 .logo-home {
     display: flex;
     align-items: center;
@@ -60,16 +57,17 @@ body {
 }
 
 .logo-home img {
-    height: 50px;
+    height: 50px; /* Sesuaikan tinggi logo */
     width: auto;
     display: block;
 }
 
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Agar menu turun di HP jika penuh */
 }
 
 .nav-links li a {
@@ -82,15 +80,12 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
+.nav-links li a:hover, .nav-links li a.active {
     background-color: #ffcc00;
     color: #121212;
 }
 
-/* ============================================================
-   3. SUB-MENU (ORGANISASI)
-   ============================================================ */
+/* --- Sub-Menu (Untuk Struktur Organisasi) --- */
 .sub-nav {
     background-color: #1a1a1a;
     padding: 10px 0;
@@ -115,19 +110,16 @@ body {
     transition: all 0.3s ease;
 }
 
-.sub-links li a:hover,
-.sub-links li a.active {
+.sub-links li a:hover, .sub-links li a.active {
     color: #ffcc00;
     border-color: #ffcc00;
 }
 
-/* ============================================================
-   4. HERO SECTION
-   ============================================================ */
+/* --- Hero Section (Halaman Depan) --- */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(18, 18, 18, 1)),
-                url('hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,1)), 
+                url('hero-bg.jpg') no-repeat center center/cover; /* Ganti hero-bg.jpg jika ada */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,53 +159,57 @@ body {
     background-color: #fff;
 }
 
-/* ============================================================
-   5. MAIN CONTENT & PAGE TITLE
-   ============================================================ */
+/* --- Main Content Areas --- */
 .main-content {
     padding: 60px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(18, 18, 18, 1)),
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,1)), 
                 url('hero-bg.jpg') no-repeat center center/cover;
+        
+    
 }
 
+/* Menghilangkan garis bawah bawaan dan memindahkannya ke atas */
 .page-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
     color: #fff;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Menyusun elemen secara vertikal */
+    align-items: center;    /* Menjaga semuanya tetap di tengah */
 }
 
 .page-title span {
     color: #ffcc00;
 }
 
+/* Garis Kuning di ATAS Teks */
 .page-title::before {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
     background-color: #ffcc00;
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Jarak antara garis dan tulisan Welcome */
 }
 
+/* Memastikan tidak ada garis di bawah teks (menghapus settingan lama) */
 .page-title::after {
     display: none;
 }
 
-/* ============================================================
-   6. CARDS (PROFILE, BOOKLET, STAFF)
-   ============================================================ */
+
+
+
+
+/* Profile Card (Struktur) & Booklet (Kerjasama) */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.profile-card,
-.booklet-card {
+.profile-card, .booklet-card {
     background-color: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
@@ -221,42 +217,37 @@ body {
     border: 1px solid #333;
 }
 
-.profile-card:hover,
-.booklet-card:hover {
+.profile-card:hover, .booklet-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     border-color: #ffcc00;
 }
 
-.profile-img-container,
-.booklet-img-container {
+.profile-img-container, .booklet-img-container {
     width: 100%;
     height: 350px;
     overflow: hidden;
 }
 
-.profile-img-container img,
-.booklet-img-container img {
+
+.profile-img-container img, .booklet-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.profile-info,
-.booklet-info {
+.profile-info, .booklet-info {
     padding: 25px;
 }
 
-.profile-info h3,
-.booklet-info h3 {
+.profile-info h3, .booklet-info h3 {
     color: #fff;
     margin-bottom: 5px;
     font-size: 1.4rem;
 }
 
-.profile-info .position,
-.booklet-info .type {
+.profile-info .position, .booklet-info .type {
     color: #ffcc00;
     font-weight: 600;
     margin-bottom: 15px;
@@ -264,24 +255,136 @@ body {
     text-transform: uppercase;
 }
 
-.profile-info .bio,
-.booklet-info .desc {
+.profile-info .bio, .booklet-info .desc {
     font-size: 0.9rem;
     color: #b0b0b0;
     margin-bottom: 20px;
 }
 
-/* --- Staff Grid --- */
-.staff-grid {
+
+
+/* Contact Button (WA) */
+.contact-btn {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    gap: 10px;
+    background-color: #25d366; /* Warna WA */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Placeholder (Map/Spotify) */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #0a0a0a;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* --- Media Queries (Responsif HP) --- */
+@media (max-width: 768px) {
+    .staff-grid {
+        gap: 15px; /* Jarak lebih rapat di HP */
+    }
+
+    .staff-card {
+        /* Di HP (2 kolom), lebar kartu 50% dikurangi gap */
+        width: calc(50% - 15px); 
+        min-width: 140px; /* Minimal lebar di HP agar tidak hancur */
+    }
+    
+    .staff-img-box { 
+        height: 160px; 
+    }
+    
+    .staff-info h4 { 
+        font-size: 0.9rem; 
+    }
+    html { font-size: 14px; }
+    
+    .navbar-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+
+    .sub-links li a { font-size: 0.75rem; }
+
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    .page-title { font-size: 2rem; }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* 1 Kolom di HP */
+    }
+}
+
+/* Gaya dasar link di footer */
+footer p a {
+    color: #ffffff;          /* Warna awal: Putih */
+    text-decoration: none;   /* Menghilangkan garis bawah */
+    font-weight: 600;        /* Membuat tulisan sedikit tebal */
+    transition: color 0.3s ease; /* Efek transisi halus saat berubah warna */
+}
+
+/* Gaya saat kursor menyentuh (Hover) */
+footer p a:hover {
+    color: #ffcc00;          /* Warna saat disentuh: Kuning Emas UAB */
+    text-decoration: underline; /* Muncul garis bawah saat disentuh (opsional) */
+}
+
+/* Container Utama Staff */
+.staff-grid {
+    display: flex;           /* Ubah ke Flex agar lebih fleksibel untuk item ganjil */
+    flex-wrap: wrap;         /* Agar item turun ke bawah jika ruang habis */
+    justify-content: center; /* KUNCI UTAMA: Membuat semua isi (termasuk yang ganjil) berada di tengah */
     gap: 25px;
     margin: 20px auto 0;
     max-width: 1000px;
     padding: 0 20px;
 }
 
+/* Ukuran Kartu Staff di Laptop */
 .staff-card {
     background: #1a1a1a;
     border-radius: 12px;
@@ -289,8 +392,9 @@ body {
     border: 1px solid #333;
     transition: all 0.3s ease;
     text-align: center;
-    width: calc(33.333% - 25px);
-    min-width: 250px;
+    /* Di laptop (3 kolom), lebar kartu kira-kira 30% */
+    width: calc(33.333% - 25px); 
+    min-width: 250px; /* Batas minimal agar kartu tidak terlalu kurus */
 }
 
 .staff-card:hover {
@@ -298,9 +402,10 @@ body {
     transform: translateY(-5px);
 }
 
+/* Ukuran Foto Staff Lebih Seragam */
 .staff-img-box {
     width: 100%;
-    height: 220px;
+    height: 220px; /* Ukuran pas untuk foto staff */
     overflow: hidden;
     background: #222;
 }
@@ -308,8 +413,8 @@ body {
 .staff-img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(30%);
+    object-fit: cover; /* Foto tidak akan gepeng */
+    filter: grayscale(30%); /* Efek estetik, akan berwarna penuh saat hover */
     transition: 0.3s;
 }
 
@@ -317,6 +422,7 @@ body {
     filter: grayscale(0%);
 }
 
+/* Info Text Staff */
 .staff-info {
     padding: 15px;
 }
@@ -327,172 +433,49 @@ body {
     margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* Nama panjang akan terpotong rapi */
 }
 
 .staff-info p {
     font-size: 0.8rem;
     color: #ffcc00;
-    font-weight: 600;
+    font-weight:600;
     text-transform: uppercase;
 }
 
-/* ============================================================
-   7. HORIZONTAL BOOKLET
-   ============================================================ */
-.booklet-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-top: 20px;
+/* --- RESPONSIVE FIX --- */
+@media (max-width: 992px) {
+    .staff-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.booklet-card-horizontal {
-    display: flex;
-    background-color: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #333;
-    max-width: 800px;
-    width: 100%;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+@media (max-width: 600px) {
+    .staff-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom agar tidak terlalu panjang ke bawah */
+        gap: 15px; 
+    }
+    .staff-img-box { height: 160px; } /* Di HP foto lebih pendek */
+    .staff-info h4 { font-size: 0.9rem; }
 }
 
-.booklet-card-horizontal:hover {
-    transform: translateY(-5px);
-    border-color: #ffcc00;
-}
 
-.booklet-img-box {
-    flex: 0 0 300px;
-    height: auto;
-    overflow: hidden;
-}
-
-.booklet-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.booklet-content {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.booklet-content .type {
-    color: #ffcc00;
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.booklet-content h3 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.booklet-content .desc {
-    color: #b0b0b0;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-/* ============================================================
-   8. INFO CARDS & CONTACTS
-   ============================================================ */
-.info-card {
-    margin-bottom: 40px;
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.info-title {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 20px;
-    text-align: left;
-    border-left: 5px solid #ffcc00;
-    padding-left: 15px;
-}
-
-.info-wrapper {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.info-image-container {
-    flex: 0 0 300px;
-}
-
-.info-img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-}
-
-.info-text {
-    flex: 1;
-    color: #ccc;
-    line-height: 1.7;
-    font-size: 1.1rem;
-}
-
-/* --- Buttons & WA --- */
-.info-tombol {
-    display: flex;
-    justify-content: left;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.infoTOmbol-floating-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #ffcc00;
-    color: #000000;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: 2px solid #ffb700;
-}
-
-.infoTOmbol-floating-btn:hover {
-    background-color: transparent;
-    color: #ffb700;
-    transform: translateY(-3px);
-}
-
+/* Container WA - Sekarang tidak melayang */
 .wa-floating-container {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    justify-content: center; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
     width: 100%;
 }
 
 .wa-info {
     display: flex;
-    justify-content: left;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
     width: 100%;
 }
 
+/* Gaya Tombol WA (Tetap sama, hanya hapus bayangan jika ingin lebih simpel) */
 .wa-floating-btn {
     display: flex;
     align-items: center;
@@ -509,8 +492,8 @@ body {
 }
 
 .wa-floating-btn:hover {
-    background-color: transparent;
-    color: #25d366;
+    background-color: transparent; /* Background jadi bening saat hover */
+    color: #25d366;               /* Teks jadi hijau */
     transform: translateY(-3px);
 }
 
@@ -520,37 +503,71 @@ body {
     fill: currentColor;
 }
 
-.contact-btn {
+/* Instagram */
+.instagram-floating-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #25d366;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    justify-content: center; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
 }
 
-.contact-link {
-    color: #b0b0b0;
+.instagram-info {
+    display: flex;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
+.instagram-floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #E1306C;
+    color: #ffffff;
     text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
+    border: 2px solid #E1306C;
+}
+
+.instagram-floating-btn:hover {
+    background-color: transparent; 
+    color: #E1306C;               
+    transform: translateY(-3px);
+}
+
+.instagram-icon-svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Warna dasar link sebelum disentuh kursor */
+.contact-link {
+    color: #b0b0b0;          /* Warna abu-abu agar senada dengan deskripsi */
+    text-decoration: none;   /* Menghilangkan garis bawah standar */
+    transition: all 0.3s ease; /* Agar perubahan warna terasa halus */
     font-weight: 500;
 }
 
+/* Efek saat kursor mengenai tulisan (Hover) */
 .contact-link:hover {
-    color: #ffcc00;
-    text-decoration: underline;
-    padding-left: 5px;
+    color: #ffcc00;          /* Berubah menjadi kuning khas UAB */
+    text-decoration: underline; /* Muncul garis bawah */
+    padding-left: 5px;       /* Efek tambahan: sedikit bergeser ke kanan */
 }
 
-/* ============================================================
-   9. RENTAL & MAPS & SPREADSHEET
-   ============================================================ */
-.rental-section,
+/* Gaya untuk Subbab */
+.rental-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
 .location-section {
     margin-bottom: 60px;
     text-align: center;
@@ -567,22 +584,23 @@ body {
     margin-bottom: 25px;
 }
 
+/* Container Utama Spreadsheet */
 .spreadsheet-wrapper {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1000px; /* Membatasi lebar agar tidak terlalu melar di laptop */
+    margin: 0 auto;    /* Mengetengahkan kontainer */
+    padding: 0 20px;   /* Memberi jarak aman agar tidak nempel pinggiran layar HP */
 }
 
 .spreadsheet-container {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 500px;     /* Tinggi kolom spreadsheet */
     background-color: #1a1a1a;
     border: 2px solid #333;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;  /* Agar sudut spreadsheet melengkung rapi */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .spreadsheet-container iframe {
@@ -591,6 +609,7 @@ body {
     border: none;
 }
 
+/* Link di bawah spreadsheet */
 .spreadsheet-footer {
     text-align: center;
     margin-top: 15px;
@@ -609,63 +628,11 @@ body {
     color: #fff;
 }
 
-.map-wrapper {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.map-frame {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    background-color: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #333;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.map-frame iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    border: 0;
-}
-
-.iframe-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #333;
-}
-
-.iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* --- Misc Tools --- */
-.tool-catalog-placeholder {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px;
-    background: #1a1a1a;
-    border: 2px dashed #444;
-    border-radius: 12px;
-    color: #666;
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .spreadsheet-container {
+        height: 400px; /* Sedikit lebih pendek di HP agar tidak makan tempat */
+    }
 }
 
 .btn-link {
@@ -684,6 +651,18 @@ body {
     color: #000;
 }
 
+/* Placeholder untuk Katalog Alat */
+.tool-catalog-placeholder {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #1a1a1a;
+    border: 2px dashed #444;
+    border-radius: 12px;
+    color: #666;
+}
+
 .btn-link-yellow {
     display: inline-block;
     margin-top: 15px;
@@ -696,38 +675,76 @@ body {
     text-decoration: underline;
 }
 
-/* ============================================================
-   10. VINYL PLAYLIST SECTION
-   ============================================================ */
+/* Wrapper Utama Maps */
+.map-wrapper {
+    width: 100%;
+    max-width: 1000px; /* Samakan dengan max-width spreadsheet agar sejajar */
+    margin: 0 auto;    /* Mengetengahkan secara horizontal */
+    padding: 0 20px;   /* KUNCI: Memberi jarak aman 20px dari pinggir layar */
+}
+
+/* Bingkai Peta */
+.map-frame {
+    position: relative;
+    width: 100%;
+    height: 450px;       /* Tinggi untuk layar Laptop */
+    background-color: #1a1a1a;
+    border-radius: 15px; /* Sudut melengkung yang halus */
+    overflow: hidden;    /* Memastikan peta mengikuti lengkungan sudut */
+    border: 2px solid #333;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.map-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .map-wrapper {
+        padding: 0 15px; /* Jarak sedikit lebih rapat di HP */
+    }
+    
+    .map-frame {
+        height: 300px;  /* Peta tidak terlalu tinggi di layar HP */
+    }
+}
+
+/* Container Utama Item */
 .playlist-item {
     margin-bottom: 80px;
     width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
 }
 
 .playlist-flex {
     display: flex;
     align-items: center;
-    gap: 120px;
+    gap: 120px; /* JARAK AMAN: Agar deskripsi tidak tertutup vinyl yang keluar */
     flex-wrap: wrap;
 }
 
+/* --- LOGIKA VISUAL ALBUM --- */
 .album-wrapper {
     position: relative;
-    width: 320px;
+    width: 320px; /* Area total cover + vinyl yang keluar */
     height: 250px;
     display: flex;
     align-items: center;
 }
 
+/* Cover Album (Depan) */
 .album-cover {
     position: relative;
     z-index: 3;
     left: 50px;
     width: 250px;
     height: 250px;
-    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 8px 0 25px rgba(0,0,0,0.6);
 }
 
 .album-cover img {
@@ -737,50 +754,55 @@ body {
     border-radius: 4px;
 }
 
+/*Judul Lagu*/
 .song-info-top {
     position: relative;
-    text-align: left;
-    margin-bottom: 20px;
-    padding-left: 50px;
+    left: 50px;
     color: white !important;
 }
-
+/* Piringan Vinyl (Belakang) */
 .vinyl-record {
     position: absolute;
     z-index: 1;
-    left: 180px;
+    left: 180px; /* GESER KE KANAN: Posisi vinyl keluar lebih banyak */
     width: 240px;
     height: 240px;
-    background-color: #080808;
+    background-color: #080808; /* Hitam pekat piringan */
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* Tekstur alur piringan hitam */
     background: radial-gradient(circle, #111 20%, #050505 21%, #111 25%, #050505 26%);
     background-size: 5px 5px;
+    
     animation: spin 5s linear infinite;
 }
 
+/* Efek Fade Color / Cahaya Pantulan (Shine) */
 .vinyl-shine {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    /* Gradien kerucut untuk menciptakan pantulan cahaya seperti jam tangan/CD */
     background: conic-gradient(
         from 0deg,
         transparent 0deg,
-        rgba(255, 255, 255, 0.05) 45deg,
+        rgba(255,255,255,0.05) 45deg,
         transparent 90deg,
-        rgba(255, 255, 255, 0.05) 180deg,
+        rgba(255,255,255,0.05) 180deg,
         transparent 270deg,
-        rgba(255, 255, 255, 0.05) 315deg,
+        rgba(255,255,255,0.05) 315deg,
         transparent 360deg
     );
     z-index: 2;
 }
 
+/* Label Tengah (Gambar Cover) */
 .vinyl-label {
     position: relative;
     z-index: 4;
@@ -789,7 +811,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #111;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 .vinyl-label img {
@@ -798,35 +820,34 @@ body {
     object-fit: cover;
 }
 
+/* Animasi Putar */
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
+/* Deskripsi Lagu */
 .song-description {
     position: relative;
     left: 10px;
     flex: 2;
     max-width: 500px;
     color: #d0d0d0;
-    z-index: 5;
+    z-index: 5; /* Pastikan teks di atas segalanya */
 }
 
-.song-title,
-.song-artist {
-    color: #ffffff;
+/* Responsif untuk HP */
+@media (max-width: 992px) {
+    .playlist-flex {
+        gap: 40px;
+        justify-content: center;
+    }
+    .album-wrapper {
+        margin-right: 60px; /* Ruang tambahan karena vinyl menggeser ke kanan */
+    }
 }
 
-.song-artist a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.song-artist a:hover {
-    color: #ffcc00;
-}
-
+/* Styling Pemutar Audio */
 .audio-preview {
     margin: 20px 0;
     padding: 15px;
@@ -845,12 +866,20 @@ body {
 audio {
     width: 100%;
     height: 35px;
-    filter: invert(90%) hue-rotate(180deg) brightness(1.2);
+    filter: invert(90%) hue-rotate(180deg) brightness(1.2); /* Membuat audio player menyesuaikan tema dark mode */
 }
 
+/* Penyesuaian Khusus Mobile */
+@media (max-width: 768px) {
+    audio {
+        height: 40px
+    }
+}
+
+/* Styling Tombol Spotify (Mengikuti Gaya WA Anda) */
 .spotify-btn-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Ganti ke center jika di tampilan HP */
     margin-top: 15px;
 }
 
@@ -858,7 +887,7 @@ audio {
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: #1DB954;
+    background-color: #1DB954; /* Hijau Spotify */
     color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
@@ -881,266 +910,54 @@ audio {
     fill: currentColor;
 }
 
-/* ============================================================
-   11. IMAGE SLIDER
-   ============================================================ */
-.slider-wrapper {
-    margin: 20px 0;
-    width: 100%;
-    overflow: hidden;
+/* Penyesuaian Responsif HP */
+@media (max-width: 768px) {
+    .spotify-btn-container {
+        justify-content: center;
+    }
 }
 
-.image-slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 15px;
-    padding-bottom: 15px;
-    -webkit-overflow-scrolling: touch;
+/* Menargetkan Judul Lagu */
+.song-title {
+    color: #ffffff; /* Putih bersih */
 }
 
-.image-slider::-webkit-scrollbar {
-    height: 6px;
-}
-
-.image-slider::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
-}
-
-.image-slider img {
-    flex: 0 0 100%;
-    width: 100%;
-    aspect-ratio: 1920 / 1080;
-    object-fit: cover;
-    border-radius: 12px;
-    scroll-snap-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.slider-hint {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 10px;
-}
-
-/* ============================================================
-   12. FOOTER
-   ============================================================ */
-footer {
-    background-color: #0a0a0a;
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid #333;
-}
-
-footer p {
-    color: #777;
-    font-size: 0.85rem;
-}
-
-footer p a {
+/* Menargetkan Nama Band (Paragraf) */
+.song-artist {
     color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
+}
+
+/* KHUSUS: Menargetkan Link di dalam Nama Band */
+/* Ini penting karena link <a> tidak akan berubah warna hanya dengan mengatur parent-nya */
+.song-artist a {
+    color: #ffffff; 
+    text-decoration: none; /* Menghilangkan garis bawah jika ingin lebih bersih */
     transition: color 0.3s ease;
 }
 
-footer p a:hover {
-    color: #ffcc00;
-    text-decoration: underline;
+/* Opsional: Berikan efek warna kuning khas UAB saat link disentuh kursor */
+.song-artist a:hover {
+    color: #ffcc00; 
 }
 
-/* ============================================================
-   13. MEDIA QUERIES
-   ============================================================ */
-
-/* --- TABLET & IPAD (768px - 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        max-width: 95%;
-    }
-
-    .staff-card {
-        width: calc(50% - 25px);
-        min-width: 280px;
-    }
-
-    .playlist-flex {
-        gap: 60px;
-        justify-content: center;
-    }
-
-    .album-wrapper {
-        transform: scale(0.9);
-    }
-
-    .song-description {
-        max-width: 450px;
-    }
-
-    .info-wrapper {
-        gap: 20px;
-    }
-
-    .info-image-container {
-        flex: 0 0 250px;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links li a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-    }
-
-    .booklet-card-horizontal {
-        max-width: 100%;
-    }
-    
-    .booklet-img-box {
-        flex: 0 0 250px;
-    }
+/* --- Perbaikan Playlist General --- */
+.playlist-container {
+    padding-bottom: 50px;
 }
 
-/* --- MOBILE LANDSCAPE / LARGE PHONES --- */
-@media (max-width: 1100px) {
-    .navbar-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo-home {
-        margin-bottom: 15px;
-    }
-    
-    .nav-links {
-        justify-content: center;
-    }
+/* Memastikan judul dan konten dalam satu grup yang rapi */
+.song-info-top {
+    position: relative;
+    left: 0; /* Reset left agar bisa diatur lewat margin */
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 50px; /* Sejajar dengan cover di laptop */
 }
 
-@media (max-width: 992px) {
-    .playlist-flex {
-        gap: 40px;
-        justify-content: center;
-    }
-    .album-wrapper {
-        margin-right: 60px;
-    }
-}
-
-/* --- MOBILE (max-width: 768px) --- */
+/* --- RESPONSIVE FIX UNTUK HP (PENTING) --- */
 @media (max-width: 768px) {
-    html { font-size: 14px; }
-
-    .navbar-flex {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 10px;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .nav-links li a {
-        font-size: 0.8rem;
-        padding: 4px 10px;
-    }
-
-    .sub-links li a { font-size: 0.75rem; }
-
-    .hero-content h1 { font-size: 2.5rem; }
-    
-    .page-title { font-size: 2rem; }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Staff Grid Mobile */
-    .staff-grid {
-        gap: 15px;
-    }
-
-    .staff-card {
-        width: calc(50% - 15px);
-        min-width: 140px;
-    }
-
-    .staff-img-box {
-        height: 160px;
-    }
-
-    .staff-info h4 {
-        font-size: 0.9rem;
-    }
-
-    /* Booklet Horizontal Mobile */
-    .booklet-card-horizontal {
-        flex-direction: column;
-        max-width: 90%;
-    }
-
-    .booklet-img-box {
-        flex: 0 0 auto;
-        width: 100%;
-        aspect-ratio: 1 / 1;
-    }
-
-    .booklet-img-box img {
-        border-radius: 15px 15px 0 0;
-    }
-
-    .booklet-content h3 {
-        font-size: 1.4rem;
-    }
-
-    /* Info Card Mobile */
-    .info-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .info-image-container {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .info-title {
-        font-size: 1.5rem;
-        text-align: center;
-        border-left: none;
-        border-bottom: 3px solid #ffcc00;
-        padding-left: 0;
-        padding-bottom: 5px;
-        display: block;
-    }
-
-    .info-text {
-        text-align: justify;
-        font-size: 1rem;
-    }
-
-    /* Spreadsheet & Map Mobile */
-    .spreadsheet-container { height: 400px; }
-    
-    .map-wrapper { padding: 0 15px; }
-    
-    .map-frame { height: 300px; }
-
-    /* Playlist Mobile */
     .playlist-flex {
-        flex-direction: column;
+        flex-direction: column; /* Teks pindah ke bawah cover */
         gap: 30px;
         align-items: center;
         text-align: center;
@@ -1148,24 +965,24 @@ footer p a:hover {
 
     .song-info-top {
         padding-left: 0;
-        text-align: center;
+        text-align: center; /* Judul ke tengah di HP */
     }
 
     .album-wrapper {
-        width: 250px;
+        width: 250px; /* Kecilkan sedikit untuk HP */
         height: 250px;
         margin: 0 auto;
-        transform: translateX(-30px);
+        transform: translateX(-30px); /* Geser ke kiri sedikit agar vinyl yang nongol di kanan tetap di tengah layar */
     }
 
     .album-cover {
-        left: 0;
+        left: 0; /* Reset posisi cover */
         width: 200px;
         height: 200px;
     }
 
     .vinyl-record {
-        left: 100px;
+        left: 100px; /* Vinyl nongol lebih sedikit agar tidak bikin layar bocor */
         width: 190px;
         height: 190px;
     }
@@ -1176,22 +993,335 @@ footer p a:hover {
     }
 
     .song-description {
-        left: 0;
+        left: 0; /* Reset posisi teks */
         padding: 0 10px;
         max-width: 100%;
     }
 
-    .spotify-btn-container { justify-content: center; }
+    .spotify-btn-container {
+        justify-content: center; /* Tombol ke tengah di HP */
+    }
     
-    audio { height: 40px; }
-
-    /* Slider Mobile */
-    .image-slider img { flex: 0 0 90%; }
+    /* Mencegah scroll horizontal yang merusak tampilan */
+    body {
+        overflow-x: hidden;
+    }
 }
 
-@media (max-width: 600px) {
-    .staff-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+/* Styling Card */
+.info-card {
+    margin-bottom: 40px;
+    background: #1a1a1a; /* Memberi sedikit kontras background */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Judul di Kiri */
+.info-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 5px solid #ffcc00; /* Aksen warna kuning khas UB */
+    padding-left: 15px;
+}
+
+/* Wrapper untuk Gambar & Deskripsi */
+.info-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Pengaturan Gambar Rasio 4:5 */
+.info-image-container {
+    flex: 0 0 300px; /* Lebar gambar di Desktop */
+}
+
+.info-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Deskripsi */
+.info-text {
+    flex: 1;
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.info-tombol {
+    display: flex;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
+.infoTOmbol-floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffcc00;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ffcc00;
+}
+
+.infoTOmbol-floating-btn:hover {
+    background-color: transparent; /* Background jadi bening saat hover */
+    color: #ffcc00;               /* Teks jadi hijau */
+    transform: translateY(-3px);
+}
+
+/* --- RESPONSIVE UNTUK HP (Mobile) --- */
+@media (max-width: 768px) {
+    .info-wrapper {
+        flex-direction: column; /* Gambar & Teks jadi berderet ke bawah */
+        gap: 20px;
     }
+
+    .info-image-container {
+        flex: 0 0 auto;
+        width: 100%; /* Gambar memenuhi lebar layar HP */
+        max-width: 100%; 
+    }
+
+    .info-title {
+        font-size: 1.5rem;
+        text-align: center; /* Judul ke tengah saat di HP agar lebih balance */
+        border-left: none;
+        border-bottom: 3px solid #ffcc00;
+        padding-left: 0;
+        padding-bottom: 5px;
+        display: block;
+    }
+
+    .info-text {
+        text-align: justify; /* Teks rata kanan-kiri di HP agar rapi */
+        font-size: 1rem;
+    }
+    
+    /* Navbar juga perlu dibuat scrollable jika terlalu panjang */
+    .nav-links {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+}
+
+/* Responsif untuk HP (Menjadi Tumpuk ke Bawah) */
+@media (max-width: 768px) {
+    .booklet-card-horizontal {
+        flex-direction: column; 
+        max-width: 90%;
+    }
+
+    /* --- PERUBAHAN DI SINI --- */
+    .booklet-img-box {
+        flex: 0 0 auto;       /* Menghapus batasan tinggi fixed sebelumnya */
+        width: 100%;          /* Lebar penuh mengikuti kartu */
+        aspect-ratio: 1 / 1;  /* KUNCI: Membuat perbandingan lebar dan tinggi 1:1 (Kotak) */
+    }
+    /* ------------------------- */
+
+    .booklet-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .booklet-img-box img {
+        border-radius: 15px 15px 0 0; /* Melengkung hanya di sudut atas */
+    }
+}
+
+/* Container pembungkus slider */
+.slider-wrapper {
+    margin: 20px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Area slider yang bisa digeser */
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Fitur utama geser magnetis */
+    scroll-behavior: smooth;
+    gap: 15px; /* Jarak antar gambar */
+    padding-bottom: 15px;
+}
+
+/* Menghilangkan scrollbar di Chrome/Safari agar rapi */
+.image-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-slider::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* Styling untuk gambar dengan rasio 1920x1080 */
+.image-slider img {
+    flex: 0 0 100%; /* Satu gambar mengambil penuh lebar container */
+    width: 100%;
+    aspect-ratio: 1920 / 1080; /* Menjaga proporsi tetap 16:9 */
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    border-radius: 12px;
+    scroll-snap-align: center; /* Gambar akan berhenti di tengah saat digeser */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Petunjuk kecil di bawah gambar */
+.slider-hint {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .image-slider img {
+        flex: 0 0 90%; /* Pada HP, gambar sedikit terlihat di samping agar user tahu bisa digeser */
+    }
+}
+
+/* Pengaturan Utama Card */
+.booklet-card-horizontal {
+    display: flex;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+/* Kotak Foto: Melebar sesuai foto aslinya (Auto), tapi dibatasi agar teks tidak hilang */
+.booklet-img-box {
+    flex: 0 1 auto; /* Lebar otomatis mengikuti isi (foto) */
+    max-width: 60%; /* Batas aman maksimal foto agar teks tidak terlalu sempit */
+    display: flex;
+}
+
+.booklet-img-box img {
+    width: auto;
+    max-width: 100%;
+    height: 400px; /* Tinggi seragam agar rapi */
+    object-fit: cover; /* Foto mepet frame tanpa distorsi */
+    display: block;
+}
+
+/* Konten Deskripsi: Mengambil sisa lebar yang tersedia */
+.booklet-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Styling Kontak agar sejajar dengan Ikon */
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.fa-instagram { color: #E1306C; }
+.fa-whatsapp { color: #25D366; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .booklet-card-horizontal {
+        flex-direction: column;
+    }
+    .booklet-img-box {
+        max-width: 100%;
+    }
+    .booklet-img-box img {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* Booklet */
+.booklet-card {
+    margin-bottom: 40px;
+    background: #1a1a1a; /* Memberi sedikit kontras background */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.booklet-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 5px solid #ffcc00; /* Aksen warna kuning khas UB */
+    padding-left: 15px;
+}
+
+.booklet-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.booklet-image-container {
+    flex: 0 0 300px; /* Lebar gambar di Desktop */
+}
+
+.booklet-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.booklet-text {
+    flex: 1;
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.booklet-tombol {
+    display: flex;
+    justify-content: left; /* Memastikan tombol ada di tengah secara horizontal */
+    margin-top: 10px;       /* Jarak dari elemen di atasnya (kartu/konten) */
+    margin-bottom: 30px;    /* Jarak ke footer */
+    width: 100%;
+}
+
+.booklet-tombol-floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffcc00;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ffcc00;
+}
+
+.infoTOmbol-floating-btn:hover {
+    background-color: transparent; /* Background jadi bening saat hover */
+    color: #ffcc00;               /* Teks jadi hijau */
+    transform: translateY(-3px);
 }
